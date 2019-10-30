@@ -5,4 +5,4 @@ ConfigMgr Version: 1810
 
 Please reference the following blog article for more information:
 
-https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Enhanced-Audit-Status-Message-Queries/ba-p/884897
+[TechCommunity Blog - Enhanced Status Message Queries](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Enhanced-Audit-Status-Message-Queries/ba-p/884897)
