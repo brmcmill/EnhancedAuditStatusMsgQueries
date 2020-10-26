@@ -1,13 +1,13 @@
-﻿<#
+<#
     .DISCLAIMER
- 
-    This Sample Code is provided for the purpose of illustration only and is not intended to be used in a production environment.  
-    THIS SAMPLE CODE AND ANY RELATED INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, 
-    INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.  We grant You 
-    a nonexclusive, royalty-free right to use and modify the Sample Code and to reproduce and distribute the object code form of 
-    the Sample Code, provided that You agree: (i) to not use Our name, logo, or trademarks to market Your software product in which 
-    the Sample Code is embedded; (ii) to include a valid copyright notice on Your software product in which the Sample Code is 
-    embedded; and (iii) to indemnify, hold harmless, and defend Us and Our suppliers from and against any claims or lawsuits, 
+
+    This Sample Code is provided for the purpose of illustration only and is not intended to be used in a production environment.
+    THIS SAMPLE CODE AND ANY RELATED INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.  We grant You
+    a nonexclusive, royalty-free right to use and modify the Sample Code and to reproduce and distribute the object code form of
+    the Sample Code, provided that You agree: (i) to not use Our name, logo, or trademarks to market Your software product in which
+    the Sample Code is embedded; (ii) to include a valid copyright notice on Your software product in which the Sample Code is
+    embedded; and (iii) to indemnify, hold harmless, and defend Us and Our suppliers from and against any claims or lawsuits,
     including attorneys’ fees, that arise or result from the use or distribution of the Sample Code.
 
     .DESCRIPTION
@@ -15,12 +15,12 @@
 
     .PARAMETER XMLPath
     Location of the XML file you are importing
-            
-    .EXAMPLE OF SCRIPT
-    .\Import-StatusMessageQueries -XMLPath C:\Temp\Enhanced_AuditStatQueries.xml
+
+    .EXAMPLE
+    .\Import-StatusMessageQueries -XMLPath C:\Temp\EnhancedAuditStatusMsgQueries.xml
 
     .EXPORT EXAMPLE IF DESIRED
-    .\Get-CMStatusMessageQuery -Name Audit* | Export-Clixml <path>\Enhanced_AuditStatQueries.xml
+    .\Get-CMStatusMessageQuery -Name Audit* | Export-Clixml <path>\EnhancedAuditStatusMsgQueries.xml
 
     .REFERENCES
     -- Provides a list of all the Status Message IDs in an environment
@@ -31,21 +31,19 @@
     https://docs.microsoft.com/en-us/powershell/module/configurationmanager/get-cmstatusmessagequery?view=sccm-ps
     https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-6
     https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-6
-    
+
     .NOTES
     Author:           Brandon McMillan (MSFT)
     Acknowledgments:  Kevin Kasalonis (MSFT), Various sources
     Created:          2018.03.28
     Updated:          2019.01.21
-
-    Last ConfigMgr Environment Version Tested: 1810
 #>
 
-param( 
-    [Parameter(Mandatory=$True)] 
-    [string]$XMLPath 
-) 
- 
+param(
+    [Parameter(Mandatory=$True)]
+    [string]$XMLPath
+)
+
 # Imports ConfigMgr Module
 Import-Module "$env:SMS_ADMIN_UI_PATH\..\ConfigurationManager.psd1"
 
@@ -54,26 +52,30 @@ $SiteCode = Get-PSDrive -PSProvider CMSITE
 Set-location $SiteCode":"
 
 # Imports XML
-Try {
+try
+{
     $CMStatusMsgs = Import-Clixml $XMLPath
 }
-Catch {
+catch
+{
     Write-Host -ForegroundColor Red "Invalid file path or file type.  Please try again."
     Exit
 }
 
-foreach ($Query in $CMStatusMsgs) {
-      Try {  
-           $StatusQuery = @{
-                Name = $Query.Name
-                Expression = $Query.Expression
-                Comments = $Query.Comments  
-            }
-            New-CMStatusMessageQuery @StatusQuery
-            Write-Host -ForegroundColor Green $Query.Name "was created successfully."
-      } 
-      Catch {
-            Write-Host -ForegroundColor Red $Query.Name "already exists."
-      }
-          
-} 
+foreach ($Query in $CMStatusMsgs)
+{
+    try
+    {
+        $StatusQuery = @{
+            Name = $Query.Name
+            Expression = $Query.Expression
+            Comments = $Query.Comments
+        }
+        New-CMStatusMessageQuery @StatusQuery
+        Write-Host -ForegroundColor Green $Query.Name "was created successfully."
+    }
+    catch
+    {
+        Write-Host -ForegroundColor Red $Query.Name "already exists."
+    }
+}
