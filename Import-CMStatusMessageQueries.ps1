@@ -71,7 +71,7 @@ foreach ($Query in $CMStatusMsgs)
             Expression = $Query.Expression
             Comments = $Query.Comments
         }
-        New-CMStatusMessageQuery @StatusQuery
+        New-CMStatusMessageQuery @StatusQuery | Out-Null
         Write-Host -ForegroundColor Green $Query.Name "was created successfully."
     }
     catch
