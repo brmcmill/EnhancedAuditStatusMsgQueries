@@ -17,7 +17,7 @@
     Location of the XML file you are importing
 
     .EXAMPLE
-    .\Import-StatusMessageQueries -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
+    .\Import-StatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 
     .EXPORT EXAMPLE IF DESIRED
     .\Get-CMStatusMessageQuery -Name Audit* | Export-Clixml <path>\Enhanced_StatMsgQueries.xml
