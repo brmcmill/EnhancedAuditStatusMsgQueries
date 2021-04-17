@@ -14,7 +14,6 @@ Please reference the following blog article for more information:  [TechCommunit
 Import-StatusMessageQueries -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 ```
 
-3. Verify the queries imported successfully.
+3. Verify the queries imported successfully.  Example:
 
-
-# 
+![Export Example](.images\Export_Example.jpg)
