@@ -1,5 +1,14 @@
 <#
     This script was previously hosted on TechNet Gallery by SaudM to provide a method to export all Status Messages in a ConfigMgr environment.
+
+    Export Client Messages Example
+    .\Export-StatusMessages.ps1 -stringPathToDLL "<InstallDrive>:\Program Files\Microsoft Configuration Manager\bin\X64\system32\smsmsgs\climsgs.dll" -stringOutputCSV ExportClientMsgs.csv
+
+    Export Provider Messages Example
+    .\Export-StatusMessages.ps1 -stringPathToDLL "<InstallDrive>:\Program Files\Microsoft Configuration Manager\bin\X64\system32\smsmsgs\provmsgs.dll" -stringOutputCSV ExportProviderMsgs.csv
+
+    Export Server Messages Example
+    .\Export-StatusMessages.ps1 -stringPathToDLL "<InstallDrive>:\Program Files\Microsoft Configuration Manager\bin\X64\system32\smsmsgs\srvmsgs.dll" -stringOutputCSV ExportServerMsgs.csv
 #>
 
 param( 
