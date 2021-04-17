@@ -17,10 +17,10 @@
     Location of the XML file you are importing
 
     .EXAMPLE
-    .\Import-StatusMessageQueries -XMLPath C:\Temp\EnhancedAuditStatusMsgQueries.xml
+    .\Import-StatusMessageQueries -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 
     .EXPORT EXAMPLE IF DESIRED
-    .\Get-CMStatusMessageQuery -Name Audit* | Export-Clixml <path>\EnhancedAuditStatusMsgQueries.xml
+    .\Get-CMStatusMessageQuery -Name Audit* | Export-Clixml <path>\Enhanced_StatMsgQueries.xml
 
     .REFERENCES
     -- Provides a list of all the Status Message IDs in an environment
@@ -36,7 +36,7 @@
     Author:           Brandon McMillan (MSFT)
     Acknowledgments:  Kevin Kasalonis (MSFT), Various sources
     Created:          2018.03.28
-    Updated:          2019.01.21
+    Updated:          2020.04.17
 #>
 
 param(
