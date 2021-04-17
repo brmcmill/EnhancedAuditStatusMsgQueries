@@ -11,7 +11,7 @@ Please reference the following blog article for more information:  [TechCommunit
 2. Run the following command:
 
 ```powershell
-Import-StatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
+Import-CMStatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 ```
 
 3. Verify the queries imported successfully.  Example:
