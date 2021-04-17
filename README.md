@@ -16,4 +16,4 @@ Import-StatusMessageQueries -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 
 3. Verify the queries imported successfully.  Example:
 
-![Export Example](.images\Export_Example.jpg)
+![Export Example](/.images/Export_Example.jpg)
