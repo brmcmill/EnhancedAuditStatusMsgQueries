@@ -4,14 +4,14 @@ I have found that Status Message Queries can be one of the more underappreciated
 
 Please reference the following blog article for more information:  [TechCommunity Blog - Enhanced Audit Status Message Queries](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Enhanced-Audit-Status-Message-Queries/ba-p/884897).
 
-# Import CM Queries
+# Import Status Message Queries
 
 1. Download the **Import-CMStatusMessageQueries.ps1** and **Enhanced_StatMsgQueries.xml** files to your local ConfigMgr environment.
 
 1. Run the following command:
 
 ```powershell
-Import-StatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
+Import-CMStatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 ```
 
 1. Verify the queries imported successfully.  Example:
