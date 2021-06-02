@@ -8,17 +8,17 @@ Please reference the following blog article for more information:  [TechCommunit
 
 1. Download the **Import-CMStatusMessageQueries.ps1** and **Enhanced_StatMsgQueries.xml** files to your local ConfigMgr environment.
 
-1. Run the following command:
+2. Run the following command:
 
 ```powershell
 Import-CMStatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xml
 ```
 
-1. Verify the queries imported successfully.  Example:
+3. Verify the queries imported successfully.  Example:
 
 ![Export Example](/.images/Export_Example.jpg)
 
-1. The following custom audit status message queries are included:
+4. The following custom audit status message queries are included:
 
 |Query Title|Query Details|
 |--|--|
