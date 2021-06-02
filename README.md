@@ -18,7 +18,9 @@ Import-CMStatusMessageQueries.ps1 -XMLPath C:\Queries\Enhanced_StatMsgQueries.xm
 
 ![Export Example](/.images/Export_Example.jpg)
 
-4. The following custom audit status message queries are included:
+# Queries Included
+
+The following custom audit status message queries are included:
 
 |Query Title|Query Details|
 |--|--|
